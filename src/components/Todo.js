@@ -5,7 +5,7 @@ import AddTodoForm from './AddTodoForm';
 const Todo = () => {
   return (
     <>
-      {/* <TodoList /> */}
+      <TodoList />
       <AddTodoForm />
     </>
   );
