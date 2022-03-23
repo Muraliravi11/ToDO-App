@@ -4,8 +4,8 @@ import createSagaMiddleware from 'redux-saga';
 
 const sagaMiddleware = createSagaMiddleware();
 
-const middleware = [sagaMiddleware];
+const getStoreEnhancer = () => applyMiddleware(sagaMiddleware);
 
-const store = createStore(rootReducer, applyMiddleware(...middleware));
+const store = createStore(rootReducer);
 
 export default store;

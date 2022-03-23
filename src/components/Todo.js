@@ -7,10 +7,11 @@ import { fetchTodo } from './../library/store/todo/action';
 
 const Todo = () => {
   const dispatch = useDispatch();
+
   useEffect(() => {
-    console.log('hello');
-    dispatch(fetchTodo());
+    dispatch(fetchTodo);
   }, []);
+
   return (
     <>
       <TodoList />
