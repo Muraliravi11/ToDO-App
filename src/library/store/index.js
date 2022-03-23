@@ -7,7 +7,7 @@ const sagaMiddleware = createSagaMiddleware();
 
 const getStoreEnhancer = () => applyMiddleware(sagaMiddleware);
 
-const store = createStore(rootReducer, getStoreEnhancer());
+const store = createStore(rootReducer, {}, getStoreEnhancer());
 
 sagaMiddleware.run(rootSaga);
 

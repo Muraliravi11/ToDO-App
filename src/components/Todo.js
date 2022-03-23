@@ -7,7 +7,7 @@ import { fetchTodo } from './../library/store/todo/action';
 
 const Todo = () => {
   const dispatch = useDispatch();
-  const todoList = useSelector((state) => state);
+  const todoList = useSelector((state) => state?.todo.todo);
 
   useEffect(() => {
     dispatch(fetchTodo());
