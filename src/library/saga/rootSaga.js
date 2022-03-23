@@ -1,7 +1,7 @@
 import { all, call } from 'redux-saga/effects';
-import todo from '../todo';
+import todo from './todooo';
 
-export function* rootSaga() {
+function* rootSaga() {
   try {
     yield all([call(todo)]);
   } catch (error) {

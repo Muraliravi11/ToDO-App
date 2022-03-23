@@ -7,14 +7,15 @@ import { fetchTodo } from './../library/store/todo/action';
 
 const Todo = () => {
   const dispatch = useDispatch();
+  const todoList = useSelector((state) => state);
 
   useEffect(() => {
-    dispatch(fetchTodo);
+    dispatch(fetchTodo());
   }, []);
 
   return (
     <>
-      <TodoList />
+      <TodoList todoList={todoList} />
       <AddTodoForm />
     </>
   );

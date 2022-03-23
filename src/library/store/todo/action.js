@@ -11,3 +11,8 @@ export const completeTodo = () => ({
   type: actionTypes.COMPLETE_TODO,
   payload,
 });
+
+export const setTodo = (todo) => ({
+  type: actionTypes.SET_TODO,
+  todo,
+});

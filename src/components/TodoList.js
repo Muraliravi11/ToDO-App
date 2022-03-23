@@ -1,10 +1,13 @@
-import React from 'react';
-import { useSelector } from 'react-redux';
+import React, { memo } from 'react';
 
-const TodoList = () => {
-  // const todoList = useSelector((state) => state);
-  // console.log(todoList);
-  return <ul></ul>;
+const TodoList = ({ todoList }) => {
+  console.log(todoList);
+  return (
+    <ul>
+      {todoList?.length > 0 &&
+        todoList?.map(({ id, task }) => <li key={id}>{task}</li>)}
+    </ul>
+  );
 };
 
-export default TodoList;
+export default memo(TodoList);

@@ -1,15 +1,21 @@
-import { call, put, takeEvery } from 'redux-saga/effects';
+import { call, put, takeLatest } from 'redux-saga/effects';
 import { getTodoRequest } from '../../api';
 import * as actionTypes from '../../store/todo/action-types';
+import { setTodo } from '../../store/todo/action';
 
 export function* fetchTodo() {
-  const response = yield call(getTodoRequest());
-  const { data } = response;
-  console.log(data);
+  try {
+    const response = yield call(getTodoRequest);
+    const { data } = response;
+    // console.log(data);
+    yield put(setTodo(data));
+  } catch (error) {
+    console.log(error);
+  }
 }
 
 function* watchSaga() {
-  yield takeEvery(actionTypes.FETCH_TODO, fetchTodo);
+  yield takeLatest(actionTypes.FETCH_TODO, fetchTodo);
 }
 
 export default watchSaga;

@@ -5,8 +5,8 @@ const initialState = null;
 export const reducer = (state = initialState, action) => {
   switch (action.type) {
     case actionTypes.SET_TODO:
-      return null;
-
+      const { todo } = action;
+      return { ...state, todo };
     default:
       return state;
   }
